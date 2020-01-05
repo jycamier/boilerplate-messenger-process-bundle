@@ -2,16 +2,24 @@ sync:
   defaults:
     ignore:
       vcs: true
-  code:
+  fpm-code:
     alpha: "."
-    beta: "docker://fpm/app"
+    beta: "docker://www-data@fpm/app"
     mode: "one-way-replica"
     ignore:
       paths:
         - 'vendor/'
-        - 'composer.json'
-        - 'composer.lock'
-  vendor:
-    alpha: "docker://fpm/app/vendor"
-    beta: "./vendor"
+        - 'var/'
+  nginx-code:
+    alpha: "./public"
+    beta: "docker://nginx/app/public"
     mode: "one-way-replica"
+  vendor:
+    alpha: "docker://fpm/app"
+    beta: "."
+    mode: "one-way-replica"
+    ignore:
+      paths:
+        - '*'
+        - '!vendor/'
+        - '!public/'

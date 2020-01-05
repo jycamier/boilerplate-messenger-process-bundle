@@ -12,13 +12,14 @@ WORKDIR /app
 
 COPY --from=base_composer /usr/bin/composer /usr/bin/composer
 
-ADD composer.json composer.lock symfony.lock .env ./
-RUN composer install --no-ansi --no-interaction --classmap-authoritative --no-scripts
-
-ADD bin bin/
-ADD config config/
-ADD public public/
-ADD src src/
+#ADD composer.json composer.lock symfony.lock .env ./
+#RUN composer install --no-ansi --no-interaction --classmap-authoritative --no-scripts
+#
+#ADD bin bin/
+#ADD config config/
+#ADD public public/
+#ADD src src/
+#ADD fixtures fixtures/
 
 ENV SHELL_VERBOSITY 0
 ENV APP_ENV dev

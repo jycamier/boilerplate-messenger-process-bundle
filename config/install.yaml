@@ -10,7 +10,3 @@
 - command: doctrine:schema:create
   --no-ansi: true
   --no-interaction: true
-- command: assets:install
-  target: public
-  --symlink: true
-  --relative: true

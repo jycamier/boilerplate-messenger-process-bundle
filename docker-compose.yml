@@ -12,7 +12,6 @@ services:
       APP_DEBUG: 1
     volumes:
       - ./docker/workspace/.zshrc:/root/.zshrc
-      - app_data:/app
 
   mariadb:
     image: mariadb:10.4.11-bionic
@@ -22,20 +21,21 @@ services:
       MYSQL_USER: sf
       MYSQL_PASSWORD: sf
     volumes:
-      - /var/lib/mysql
+      - mysql_data:/var/lib/mysql
     ports:
       - 3306:3306
 
   nginx:
+    container_name: nginx
     image: nginx:1.16-alpine
     depends_on:
       - fpm
     volumes:
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - app_data:/app
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./public:/app/public:ro
     ports:
       - 8081:80
 
 volumes:
-  app_data:
+  mysql_data:
     driver: local
