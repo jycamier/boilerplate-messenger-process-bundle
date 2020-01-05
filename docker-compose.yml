@@ -1,18 +1,18 @@
 version: "3.7"
 services:
-#  fpm:
-#    container_name: fpm
-#    build:
-#      context: .
-#      args:
-#        PHP_VERSION: 7.4-fpm-alpine
-#        COMPOSER_VERSION: latest
-#    environment:
-#      APP_ENV: dev
-#      APP_DEBUG: 1
-#    volumes:
-#      - ./docker/workspace/.zshrc:/root/.zshrc
-#      - app_data:/app
+  fpm:
+    container_name: fpm
+    build:
+      context: .
+      args:
+        PHP_VERSION: 7.4-fpm-alpine
+        COMPOSER_VERSION: latest
+    environment:
+      APP_ENV: dev
+      APP_DEBUG: 1
+    volumes:
+      - ./docker/workspace/.zshrc:/root/.zshrc
+      - app_data:/app
 
   mariadb:
     image: mariadb:10.4.11-bionic
@@ -26,15 +26,15 @@ services:
     ports:
       - 3306:3306
 
-#  nginx:
-#    image: nginx:1.16-alpine
-#    depends_on:
-#      - fpm
-#    volumes:
-#      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-#      - app_data:/app
-#    ports:
-#      - 8081:80
+  nginx:
+    image: nginx:1.16-alpine
+    depends_on:
+      - fpm
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - app_data:/app
+    ports:
+      - 8081:80
 
 volumes:
   app_data:

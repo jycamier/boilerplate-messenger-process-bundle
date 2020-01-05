@@ -5,4 +5,13 @@ sync:
   code:
     alpha: "."
     beta: "docker://fpm/app"
-    mode: "two-way-safe"
+    mode: "one-way-replica"
+    ignore:
+      paths:
+        - 'vendor/'
+        - 'composer.json'
+        - 'composer.lock'
+  vendor:
+    alpha: "docker://fpm/app/vendor"
+    beta: "./vendor"
+    mode: "one-way-replica"
