@@ -1,4 +1,38 @@
 {
+    "cleverage/process-bundle": {
+        "version": "v3.0.0"
+    },
+    "fzaninotto/faker": {
+        "version": "v1.9.1"
+    },
+    "jycamier/alice-process-bundle": {
+        "version": "dev-master"
+    },
+    "jycamier/console-command-process-bundle": {
+        "version": "dev-master"
+    },
+    "jycamier/messenger-process-bundle": {
+        "version": "dev-master"
+    },
+    "monolog/monolog": {
+        "version": "1.25.3"
+    },
+    "myclabs/deep-copy": {
+        "version": "1.9.4"
+    },
+    "nelmio/alice": {
+        "version": "3.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.2",
+            "ref": "0b9900ece737bec7752e4155c0164639dd9b0cb0"
+        },
+        "files": [
+            "config/packages/dev/nelmio_alice.yaml",
+            "config/packages/test/nelmio_alice.yaml"
+        ]
+    },
     "php": {
         "version": "7.4"
     },
@@ -10,6 +44,21 @@
     },
     "psr/log": {
         "version": "1.1.2"
+    },
+    "sebastian/comparator": {
+        "version": "3.0.2"
+    },
+    "sebastian/diff": {
+        "version": "3.0.2"
+    },
+    "sebastian/exporter": {
+        "version": "3.1.2"
+    },
+    "sebastian/recursion-context": {
+        "version": "3.0.0"
+    },
+    "sidus/base-bundle": {
+        "version": "v1.1.0"
     },
     "symfony/cache": {
         "version": "v4.4.2"
@@ -51,6 +100,9 @@
     "symfony/event-dispatcher-contracts": {
         "version": "v1.1.7"
     },
+    "symfony/expression-language": {
+        "version": "v4.4.2"
+    },
     "symfony/filesystem": {
         "version": "v4.4.2"
     },
@@ -68,6 +120,9 @@
         "files": [
             ".env"
         ]
+    },
+    "symfony/form": {
+        "version": "v4.4.2"
     },
     "symfony/framework-bundle": {
         "version": "4.4",
@@ -95,8 +150,49 @@
     "symfony/http-kernel": {
         "version": "v4.4.2"
     },
+    "symfony/inflector": {
+        "version": "v4.4.2"
+    },
+    "symfony/intl": {
+        "version": "v4.4.2"
+    },
+    "symfony/messenger": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "8a2675c061737658bed85102e9241c752620e575"
+        },
+        "files": [
+            "config/packages/messenger.yaml"
+        ]
+    },
     "symfony/mime": {
         "version": "v4.4.2"
+    },
+    "symfony/monolog-bridge": {
+        "version": "v4.4.2"
+    },
+    "symfony/monolog-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6240c6d43e8237a32452f057f81816820fd56ab6"
+        },
+        "files": [
+            "config/packages/dev/monolog.yaml",
+            "config/packages/prod/monolog.yaml",
+            "config/packages/test/monolog.yaml"
+        ]
+    },
+    "symfony/options-resolver": {
+        "version": "v4.4.2"
+    },
+    "symfony/polyfill-intl-icu": {
+        "version": "v1.13.1"
     },
     "symfony/polyfill-intl-idn": {
         "version": "v1.13.1"
@@ -109,6 +205,12 @@
     },
     "symfony/polyfill-php73": {
         "version": "v1.13.1"
+    },
+    "symfony/process": {
+        "version": "v4.4.2"
+    },
+    "symfony/property-access": {
+        "version": "v4.4.2"
     },
     "symfony/routing": {
         "version": "4.2",
@@ -124,8 +226,40 @@
             "config/routes.yaml"
         ]
     },
+    "symfony/serializer": {
+        "version": "v4.4.2"
+    },
     "symfony/service-contracts": {
         "version": "v2.0.1"
+    },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "2ad9d2545bce8ca1a863e50e92141f0b9d87ffcd"
+        },
+        "files": [
+            "config/packages/translation.yaml",
+            "translations/.gitignore"
+        ]
+    },
+    "symfony/translation-contracts": {
+        "version": "v2.0.1"
+    },
+    "symfony/validator": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "d902da3e4952f18d3bf05aab29512eb61cabd869"
+        },
+        "files": [
+            "config/packages/test/validator.yaml",
+            "config/packages/validator.yaml"
+        ]
     },
     "symfony/var-dumper": {
         "version": "v4.4.2"
