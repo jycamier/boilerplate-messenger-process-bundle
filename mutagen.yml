@@ -10,10 +10,6 @@ sync:
       paths:
         - 'vendor/'
         - 'var/'
-  nginx-code:
-    alpha: "./public"
-    beta: "docker://nginx/app/public"
-    mode: "one-way-replica"
   vendor:
     alpha: "docker://fpm/app"
     beta: "."
