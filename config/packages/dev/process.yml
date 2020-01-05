@@ -1,0 +1,25 @@
+clever_age_process:
+  configurations:
+    install:
+      entry_point: load_install_command_file
+      tasks:
+        load_install_command_file:
+          service: '@CleverAge\ProcessBundle\Task\File\YamlReaderTask'
+          options:
+            file_path: '%kernel.project_dir%/config/install.yaml'
+          outputs: [run_command]
+        run_command:
+          service: '@Jycamier\ConsoleCommandProcessBundle\Task\ConsoleApplicationTask'
+          options:
+            debug_mode: true
+          outputs: [load_fixtures]
+        load_fixtures:
+          service: '@Jycamier\AliceProcessBundle\Task\File\AliceFixtureLoaderTask'
+          options:
+            file_path: '%kernel.project_dir%/fixtures/dev.yml'
+          outputs: [debug]
+        debug:
+          service: '@CleverAge\ProcessBundle\Task\Debug\DebugTask'
+          outputs: [dispatch_message]
+        dispatch_message:
+          service: '@Jycamier\MessengerProcessBundle\Task\MessageBusDispatcherTask'

@@ -1,0 +1,10 @@
+resources:
+  App\Domain\Entity\User\User:
+    shortName: 'User'                   # optional
+    description: 'All the users of this boilerplate' # optional
+    attributes:                          # optional
+      pagination_items_per_page: 25    #
+    collectionOperations:
+      get: ~
+    itemOperations:
+      get: ~

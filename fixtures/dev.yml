@@ -1,0 +1,6 @@
+App\Application\Command\User\CreateUser:
+  user_{1..20}:
+    __construct:
+      - '<uuid()>'
+      - '<lastName()>'
+      - '<firstName()>'

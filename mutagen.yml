@@ -1,0 +1,8 @@
+sync:
+  defaults:
+    ignore:
+      vcs: true
+  code:
+    alpha: "."
+    beta: "docker://fpm/app"
+    mode: "two-way-safe"
